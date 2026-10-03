@@ -149,7 +149,10 @@ export default Plugin.define({
         {id:'local.task-monitor.panel.actions',bind:'return',enabled:()=>props.focused&&!actionsOpen()&&!busy(),run:selectAction},
       ]}));
       return <box flexDirection="column" padding={1} flexGrow={1}>
-        <text height={1} flexShrink={0} fg={base}><b>{t.open}</b> · {view()?t.states[view()!.state]:t.states.loading}</text>
+        <box flexDirection="row" height={1} flexShrink={0}>
+          <text height={1} flexGrow={1} fg={base}><b>{t.open}</b> · {view()?t.states[view()!.state]:t.states.loading}</text>
+          <text id="local-task-monitor-close" width={t.back.length+2} height={1} flexShrink={0} fg={ctx.theme.text.action} onMouseDown={props.close}>‹ {t.back}</text>
+        </box>
         {link(`↻ ${t.refresh}`,()=>{setOutput(undefined);void host.refresh();})}
         <scrollbox flexGrow={1}>
           <Show when={view()?.canInterrupt}>{link(busy()?'…':`■ ${t.stop}`,()=>{if(selection)void stop(selection.sessionID);})}</Show>

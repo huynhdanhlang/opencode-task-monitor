@@ -60,6 +60,7 @@ Top-level task summaries own displayed status. Nested step checkboxes and prose 
 ## Interaction and safety
 
 - Click an agent to open its exact native session. Its title describes the job; a cached running tool is shown when known.
+- **Back / Quay lại** in the monitor header closes the panel and returns to the transcript. Closing it also cancels any in-flight output read.
 - Pending requests open the owning native session. The plugin never replies, approves, or saves permissions.
 - Command output is fetched only when requested, as an **8 KiB snapshot**, not a follow stream. Output may contain sensitive process data; nothing is logged or persisted by the plugin.
 - The panel provides Refresh and a keyboard action chooser. Interrupt is only for an active OpenCode execution, not an independently running shell. Confirmation names the exact session; membership, selection and activity are checked again before one native interrupt request. It does not undo files or data.
@@ -73,6 +74,8 @@ An optional `projectDirectory` adapter reads the existing AI Motion Video Roadma
 Native 2.0.22 captures have verified sidebar/checklist rendering, EN/VI panels at 80/120/180 columns, native action chooser registration/selection via native command dispatch, and server-backed owned output rendering. Pure tests cover ownership, interruption guards, Unicode/byte limits, source validation (including fenced examples), trailing terminal refresh, stale selection and output-view disposal.
 
 Native permission/question response, confirmed interruption, full physical keyboard/pointer interaction and image rendering acceptance must be distinguished from unit tests or programmatic QA adapters. Do not interpret package availability as exhaustive host-version acceptance. The SDK's file reader buffers the response; the 128 KiB document limit is validated **after transfer**, not a network transport cap. Checkpoint text is limited to 24 KiB. Unsupported/malformed documents are unavailable, not truncated authority.
+
+Targeted native pointer verification at 120 columns confirms the header Back control closes the monitor through both the native binary and the existing launcher alongside the Konsole plugin. A safe UI-only probe also kept the native interruption confirmation open and showed its Cancel/Quay lại control; no session interruption was performed. This does not establish the remaining full-flow acceptance branches.
 
 Current known limitations: a failed configured checklist can share the no-plan label; child tool text depends on its loaded message cache; omitted checklist items/source attribution are only available through the existing plan; OSC payload cleanup and multiline project-text sanitization need additional hardening. Keep project documents trusted. Physical PTY activation was not established reliably by the automated harness, so no blanket keyboard/pointer acceptance is claimed.
 
