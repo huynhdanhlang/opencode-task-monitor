@@ -1,0 +1,21 @@
+export const copy = (locale: 'vi' | 'en') => locale === 'vi' ? {
+  checklist:'Checklist task', noPlan:'Chưa gắn plan cho phiên này', pending:'Chưa làm', active:'Đang làm', done:'Đã xong',
+  work: 'Đang thực hiện', attention: 'Cần phản hồi', agents: 'Agents & lệnh', project: 'Ngữ cảnh dự án', technical: 'Kỹ thuật',
+  open: 'Mở giám sát', refresh: 'Làm mới', stop: 'Dừng phiên', parent: 'Về phiên chính', output: 'Xem output', back: 'Quay lại',
+  permission: 'Quyền đang chờ', question: 'Câu hỏi', loaded: 'đã tải', partial: 'Chỉ các phiên đã tải', unknown: 'Chưa xác nhận yêu cầu',
+  context: 'Xem checkpoint', source: 'Nguồn', readAt: 'Đọc lúc', empty: 'Không có công việc đang chạy',
+  snapshot: 'Bản đọc output • tối đa 8 KiB', truncated: 'Output đã được giới hạn; dùng viewer gốc để xem thêm.',
+  confirm: 'Xác nhận dừng đúng phiên này', consequence: 'Dừng phiên/tool này; không hoàn tác file hay dữ liệu dự án.',
+  sent: 'Đã gửi yêu cầu dừng; chờ trạng thái thực tế.', stale: 'Dữ liệu đã thay đổi; hãy làm mới.', failed: 'Không thể thực hiện; hãy làm mới.',
+  states: {loading:'Đang tải',inactive:'Phiên không chạy', 'waiting-permission':'Chờ quyền', 'waiting-input':'Chờ trả lời', running:'Đang chạy',succeeded:'Phiên hoàn tất',failed:'Phiên lỗi',interrupted:'Đã dừng',stale:'Dữ liệu cũ / mất kết nối',denied:'Không được phép',unavailable:'Chưa có dữ liệu'},
+} : {
+  checklist:'Task checklist', noPlan:'No plan linked to this session', pending:'Pending', active:'In progress', done:'Done',
+  work: 'Current work', attention: 'Needs attention', agents: 'Agents & commands', project: 'Project context', technical: 'Technical',
+  open: 'Open monitor', refresh: 'Refresh', stop: 'Interrupt session', parent: 'Back to parent', output: 'View output', back: 'Back',
+  permission: 'Pending permission', question: 'Question', loaded: 'loaded', partial: 'Loaded sessions only', unknown: 'Requests not confirmed',
+  context: 'View checkpoint', source: 'Source', readAt: 'Read at', empty: 'No active work',
+  snapshot: 'Output snapshot • up to 8 KiB', truncated: 'Output bounded; use the native viewer for more.',
+  confirm: 'Confirm this exact session interruption', consequence: 'Stops this session/tool; does not undo files or project data.',
+  sent: 'Interrupt requested; waiting for actual state.', stale: 'Selection/data changed; refresh.', failed: 'Operation unavailable; refresh.',
+  states: {loading:'Loading',inactive:'Session inactive','waiting-permission':'Awaiting permission','waiting-input':'Awaiting answer',running:'Running',succeeded:'Session completed',failed:'Session failed',interrupted:'Interrupted',stale:'Stale / disconnected',denied:'Denied',unavailable:'Unavailable'},
+};

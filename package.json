@@ -1,0 +1,12 @@
+{
+  "name": "opencode-task-monitor",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Running agents, scoped background work and source-owned task checklists for OpenCode V2",
+  "license": "MIT",
+  "repository": { "type": "git", "url": "https://github.com/huynhdanhlang/opencode-task-monitor.git" },
+  "exports": { "./tui": "./tui.tsx" },
+  "scripts": { "test": "node --test tests/*.test.ts" },
+  "engines": { "node": ">=24" }
+}
